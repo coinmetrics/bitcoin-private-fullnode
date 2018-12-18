@@ -37,7 +37,16 @@ RUN set -ex; \
 
 FROM ubuntu:18.04
 
-COPY --from=builder /home/builder/prefix/btcpd /home/builder/BitcoinPrivate/btcputil/fetch-params.sh /usr/bin/
+RUN set -ex; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends \
+		ca-certificates \
+		libgomp1 \
+		wget \
+	; \
+	rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /home/builder/BitcoinPrivate/src/btcpd /home/builder/BitcoinPrivate/btcputil/fetch-params.sh /usr/bin/
 
 RUN useradd -m -u 1000 -s /bin/bash runner
 USER runner
