@@ -1,20 +1,20 @@
 # Bitcoin Private docker image
 
-[![Docker Repository on Quay](https://quay.io/repository/coinmetrics/fullnode-bitcoin-private/status "Docker Repository on Quay")](https://quay.io/repository/coinmetrics/fullnode-bitcoin-private)
+This is unofficial Bitcoin Private docker image.
+
+It is being used internally at Coin Metrics, and is published in the hope it will be useful, but without any warranty. No support is available. You are using it at your own risk.
 
 ## Using image
+
+[![Docker Repository on Quay](https://quay.io/repository/coinmetrics/fullnode-bitcoin-private/status "Docker Repository on Quay")](https://quay.io/repository/coinmetrics/fullnode-bitcoin-private)
 
 ```
 docker pull quay.io/coinmetrics/fullnode-bitcoin-private:<version>
 ```
 
-## Support
-
-This image is being used internally at Coin Metrics. No support is available. You are using it at your own risk.
-
 ## Security
 
-This image builds binaries from sources downloaded from https://github.com/BTCPrivate/BitcoinPrivate. zkSNARK parameters are downloaded and included at build time with official [fetch-parahs.sh](https://github.com/BTCPrivate/BitcoinPrivate/blob/master/btcputil/fetch-params.sh) script.
+This image builds binaries from sources downloaded from https://github.com/BTCPrivate/BitcoinPrivate. zkSNARK parameters are downloaded and included at build time with official [fetch-params.sh](https://github.com/BTCPrivate/BitcoinPrivate/blob/master/btcputil/fetch-params.sh) script.
 
 Image is built on shared Gitlab CI runners provided by Gitlab.com. [CI logs](https://gitlab.com/coinmetrics/fullnodes/bitcoin-private/pipelines)
 
